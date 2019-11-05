@@ -1,0 +1,22 @@
+language: node_js
+node_js: 
+  - "node"
+  - "12.9"
+
+before_install:
+  - cd frontend
+
+notifications:
+  email:
+    - zw1400@nyu.edu
+    - arz268@nyu.edu
+    - kk3609@nyu.edu
+    - ns3774@nyu.edu
+    - ys2792@nyu.edu
+
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run test -- -u
+  - npm run build

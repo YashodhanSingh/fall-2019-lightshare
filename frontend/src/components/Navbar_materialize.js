@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +9,8 @@ import Box from '@material-ui/core/Box';
 import Article from "./Article"
 import Miniarticle from "./Mini-article"
 import Teammember from "./Team-member"
+// import Grid from '@material-ui/core/Grid';
+import { GridList } from '@material-ui/core';
 
 
 function TabPanel(props) {
@@ -56,7 +58,7 @@ export default function NavbarUI() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -66,10 +68,10 @@ export default function NavbarUI() {
           indicatorColor="primary"
           textColor="primary"
           centered
-          // Cannot be scrollable and centered at the same time 
-          // scrollButtons="auto"
-          // centered={appBarWidth > 1179}
-          // scrollable={appBarWidth < 1179}
+        // Cannot be scrollable and centered at the same time 
+        // scrollButtons="auto"
+        // centered={appBarWidth > 1179}
+        // scrollable={appBarWidth < 1179}
         >
           <Tab label="Sport" {...a11yProps(0)} />
           <Tab label="Drama" {...a11yProps(1)} />
@@ -79,36 +81,40 @@ export default function NavbarUI() {
           <Tab label="Agile" {...a11yProps(5)} />
           <Tab label="Team" {...a11yProps(6)} />
         </Tabs>
-      {/* convert to mappin? */}
+        {/* convert to mappin? */}
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Miniarticle />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Article />
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Article />
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Article />
       </TabPanel>
       <TabPanel value={value} index={4}>
-      <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Article />
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <Article></Article>
-        <Miniarticle></Miniarticle>
+        <Article />
       </TabPanel>
       <TabPanel value={value} index={6}>
-        <Teammember></Teammember>
+        <GridList>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+			<Teammember></Teammember>
+		</GridList>
+
       </TabPanel>
-      
+
     </div>
 
   );
